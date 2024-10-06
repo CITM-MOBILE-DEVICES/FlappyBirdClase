@@ -5,7 +5,6 @@ public class GameFacade
 	private GameStateManager gameStateManager;
 	private ScoreManager scoreManager;
 	private InputManager inputManager;
-	private PlayerInputController playerInputController;
 
 	public event Action<GameManager.GameState> OnChangeState
 	{
@@ -23,7 +22,7 @@ public class GameFacade
 
 	public void InitializeGame(Action togglePausePlay)
 	{
-		gameStateManager.SetState(new InitState());
+		gameStateManager.ChangeState(new InitState());
 		inputManager.SubscribeInputs(togglePausePlay);
 	}
 
@@ -36,11 +35,11 @@ public class GameFacade
 	{
 		if (gameStateManager.CurrentState == GameManager.GameState.Play)
 		{
-			gameStateManager.SetState(new PauseState());
+			gameStateManager.ChangeState(new PauseState());
 		}
 		else if (gameStateManager.CurrentState == GameManager.GameState.Pause || gameStateManager.CurrentState == GameManager.GameState.Init)
 		{
-			gameStateManager.SetState(new PlayState());
+			gameStateManager.ChangeState(new PlayState());
 		}
 	}
 
@@ -56,6 +55,6 @@ public class GameFacade
 
 	public void GameOver()
 	{
-		gameStateManager.SetState(new GameOverState());
+		gameStateManager.ChangeState(new GameOverState());
 	}
 }

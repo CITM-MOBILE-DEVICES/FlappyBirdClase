@@ -3,10 +3,10 @@ using static GameManager;
 
 public class PauseState : IGameState
 {
-	public GameManager.GameState currentState { get; set; }
+	public GameManager.GameState CurrentState { get; set; }
 	public PauseState()
 	{
-		this.currentState = GameState.Pause;
+		this.CurrentState = GameState.Pause;
 	}
 
 	public void EnterState()

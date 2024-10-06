@@ -6,9 +6,9 @@ public class GameStateManager
 
 	public event Action<GameManager.GameState> OnChangeState;
 
-	public void SetState(IGameState newState)
+	public void ChangeState(IGameState newState)
 	{
-		CurrentState = newState.currentState;
+		CurrentState = newState.CurrentState;
 		newState.EnterState();
 		OnChangeState?.Invoke(CurrentState);
 	}

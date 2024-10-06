@@ -1,6 +1,6 @@
 public interface IGameState
 {
-	GameManager.GameState currentState { get; set; }
+	public GameManager.GameState CurrentState { get; set; }
 
-	void EnterState();
+	public void EnterState();
 }

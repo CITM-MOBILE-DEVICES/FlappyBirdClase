@@ -5,12 +5,7 @@ public class PlayerController : MonoBehaviour
 {
 	[SerializeField] private PlayerInputController playerInputController;
 	[SerializeField] private float upForce = 225f;
-	private Rigidbody2D playerRb;
-
-	private void Awake()
-	{
-		playerRb = GetComponent<Rigidbody2D>();
-	}
+	[SerializeField] private Rigidbody2D playerRb;
 
 	private void Start()
 	{

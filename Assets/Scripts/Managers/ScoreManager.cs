@@ -4,11 +4,6 @@ public class ScoreManager
 {
 	private int score = 0;
 
-	public ScoreManager()
-	{
-
-	}
-
 	public void IncreaseScore()
 	{
 		score++;

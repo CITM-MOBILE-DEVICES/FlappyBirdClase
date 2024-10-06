@@ -27,7 +27,8 @@ public class PlayerInputController : MonoBehaviour
 				inputAdapter = new MouseInputAdapter();
 				break;
 			case InputType.AI:
-				inputAdapter = new AIInputAdapter(FindObjectOfType<PlayerController>());
+				var playerController = FindObjectOfType<PlayerController>();
+				inputAdapter = new AIInputAdapter(playerController);
 				break;
 		}
 	}

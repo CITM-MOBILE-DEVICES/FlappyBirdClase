@@ -7,11 +7,11 @@ public class GameOverState : IGameState
 {
 	private const float RETRY_TIME_IN_SECONDS = 1.5f;
 
-	public GameManager.GameState currentState { get; set; }
+	public GameManager.GameState CurrentState { get; set; }
 
 	public GameOverState()
 	{
-		this.currentState = GameState.GameOver;
+		this.CurrentState = GameState.GameOver;
 	}
 
 	public void EnterState()

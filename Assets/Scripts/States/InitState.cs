@@ -3,11 +3,11 @@ using static GameManager;
 
 public class InitState : IGameState
 {
-	public GameManager.GameState currentState { get; set; }
+	public GameManager.GameState CurrentState { get; set; }
 
 	public InitState()
 	{
-		this.currentState = GameState.Init;
+		this.CurrentState = GameState.Init;
 	}
 
 	public void EnterState()
