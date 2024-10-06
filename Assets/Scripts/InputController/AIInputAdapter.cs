@@ -1,6 +1,6 @@
 public class AIInputAdapter : IInputAdapter
 {
-	private AIController aiController;
+	private readonly AIController aiController;
 
 	public AIInputAdapter(PlayerController playerController)
 	{

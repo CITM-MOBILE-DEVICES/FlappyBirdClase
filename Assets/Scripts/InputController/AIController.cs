@@ -5,28 +5,26 @@ using Random = UnityEngine.Random;
 
 public class AIController
 {
-	public enum PlayerZone
+	private enum PlayerZone
 	{
 		Top,
 		Center,
 		Bottom
 	}
 
-	public PlayerZone playerZone;
-
-	private Tuple<float, float>[] pairIntervalFlap = new Tuple<float, float>[]
+	private readonly Tuple<float, float>[] pairIntervalFlap = new Tuple<float, float>[]
 	{
 		new Tuple<float, float>(0.95f, 1.4f),
 		new Tuple<float, float>(0.65f, 0.9f),
 		new Tuple<float, float>(0.3f, 0.7f)
 	};
 
-	private float nextFlapTime;
-	private float topZone = 2;
-	private float bottomZone = -0.5f;
+	private readonly PlayerController playerController;
+	private readonly float topZone = 2;
+	private readonly float bottomZone = -0.5f;
 
+	private float nextFlapTime;
 	private bool init = false;
-	private PlayerController playerController;
 
 	public AIController(PlayerController playerController)
 	{
@@ -60,6 +58,8 @@ public class AIController
 
 	private float NextFlapTime()
 	{
+		PlayerZone playerZone;
+
 		if (playerController.transform.position.y > topZone)
 		{
 			playerZone = PlayerZone.Top;
@@ -72,6 +72,9 @@ public class AIController
 		{
 			playerZone = PlayerZone.Center;
 		}
-		return Time.time + Random.Range(pairIntervalFlap[(int)playerZone].Item1, pairIntervalFlap[(int)playerZone].Item2);
+		
+		var pairIntervalFlapElement = pairIntervalFlap[(int)playerZone];
+
+		return Time.time + Random.Range(pairIntervalFlapElement.Item1, pairIntervalFlapElement.Item2);
 	}
 }
