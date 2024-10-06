@@ -6,6 +6,7 @@ public class ObstaclesPool : MonoBehaviour
 	[SerializeField] private float spawnTime = 2.5f;
 	private float timeElapsed;
 
+	[SerializeField] private GameObject obstaclesParentGameObject;
 	[SerializeField] private GameObject obstaclePrefab;
 	[SerializeField] private int poolSize = 5;
 	private GameObject[] obstacles;
@@ -31,11 +32,10 @@ public class ObstaclesPool : MonoBehaviour
 
 	private void PrepareObstacles()
 	{
-		GameObject parent = GameObject.Find("Obstacles");
 		obstacles = new GameObject[poolSize];
 		for (int i = 0; i < poolSize; i++)
 		{
-			obstacles[i] = Instantiate(obstaclePrefab, parent.transform);
+			obstacles[i] = Instantiate(obstaclePrefab, obstaclesParentGameObject.transform);
 			obstacles[i].SetActive(false);
 		}
 	}

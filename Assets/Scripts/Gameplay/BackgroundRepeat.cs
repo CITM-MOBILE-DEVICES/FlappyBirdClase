@@ -8,15 +8,11 @@ public class BackgroundRepeat : MonoBehaviour
 	private void Awake()
 	{
 		elementRepeat = transform.parent.childCount;
-	}
-	private void Start()
-	{
 		spriteWidth = SpriteWidthBySpriteRenderer();
 	}
+
 	private void Update()
 	{
-
-
 		if (GameManager.Instance.CurrentGameState == GameManager.GameState.Play && (transform.position.x < -spriteWidth * elementRepeat))
 		{
 			ResetPosition();
@@ -32,11 +28,5 @@ public class BackgroundRepeat : MonoBehaviour
 	{
 		Sprite sprite = GetComponent<SpriteRenderer>().sprite;
 		return sprite.texture.width / sprite.pixelsPerUnit;
-	}
-
-	private float SpriteWidthByBoxCollider()
-	{
-		BoxCollider2D groundCollider = GetComponent<BoxCollider2D>();
-		return groundCollider.size.x;
 	}
 }

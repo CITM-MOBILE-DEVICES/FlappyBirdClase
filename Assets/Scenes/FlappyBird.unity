@@ -1236,7 +1236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0fc38db994c241438f98de2b8e03353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputType: 2
+  inputType: 1
 --- !u!1 &993318581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2458,6 +2458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTime: 2.5
+  obstaclesParentGameObject: {fileID: 1058283362}
   obstaclePrefab: {fileID: 599147413553306748, guid: cc6166773207c0841b86dee567e7256b, type: 3}
   poolSize: 5
   xSpawnPosition: 12
