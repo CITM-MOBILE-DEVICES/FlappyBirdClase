@@ -5,7 +5,7 @@ using static GameManager;
 
 public class GameOverState : IGameState
 {
-	private const float TIMERETRY = 1.5f;
+	private const float RETRY_TIME_IN_SECONDS = 1.5f;
 
 	public GameManager.GameState currentState { get; set; }
 
@@ -23,7 +23,7 @@ public class GameOverState : IGameState
 	private IEnumerator InfoGameOverAndRestart()
 	{
 		Debug.Log("<b><color=red> GAMEOVER </color></b>");
-		yield return new WaitForSeconds(TIMERETRY);
+		yield return new WaitForSeconds(RETRY_TIME_IN_SECONDS);
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 }

@@ -23,7 +23,7 @@ public class ObstaclesPool : MonoBehaviour
 	private void Update()
 	{
 		timeElapsed += Time.deltaTime;
-		if (timeElapsed > spawnTime && GameManager.Instance.currentGameState == GameState.Play)
+		if (timeElapsed > spawnTime && GameManager.Instance.CurrentGameState == GameState.Play)
 		{
 			SpawnObstacle();
 		}

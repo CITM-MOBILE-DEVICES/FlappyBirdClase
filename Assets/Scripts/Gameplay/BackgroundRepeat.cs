@@ -17,7 +17,7 @@ public class BackgroundRepeat : MonoBehaviour
 	{
 
 
-		if (GameManager.Instance.currentGameState == GameManager.GameState.Play && (transform.position.x < -spriteWidth * elementRepeat))
+		if (GameManager.Instance.CurrentGameState == GameManager.GameState.Play && (transform.position.x < -spriteWidth * elementRepeat))
 		{
 			ResetPosition();
 		}

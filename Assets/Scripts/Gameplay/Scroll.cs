@@ -8,7 +8,7 @@ public class Scroll : MonoBehaviour
 	private void Start()
 	{
 		rigidBody = GetComponent<Rigidbody2D>();
-		SetScroll(GameManager.Instance.currentGameState);
+		SetScroll(GameManager.Instance.CurrentGameState);
 		GameManager.Instance.OnChangeState += SetScroll;
 	}
 

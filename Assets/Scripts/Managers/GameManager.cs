@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-	private static GameManager instance;
 	public static GameManager Instance { get { return instance; } }
+	private static GameManager instance;
+
+	public GameState CurrentGameState { get { return gameFacade.GetCurrentGameState(); } }
 
 	private GameFacade gameFacade;
 
@@ -59,6 +61,4 @@ public class GameManager : MonoBehaviour
 	{
 		gameFacade.GameOver();
 	}
-
-	public GameState currentGameState { get { return gameFacade.GetCurrentGameState(); } }
 }

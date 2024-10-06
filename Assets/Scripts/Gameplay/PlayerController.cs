@@ -13,17 +13,17 @@ public class PlayerController : MonoBehaviour
 
 	private void Start()
 	{
-		PlayerInputController.pressButtonA += Flap;
+		PlayerInputController.PressButtonA += Flap;
 	}
 
 	private void OnDestroy()
 	{
-		PlayerInputController.pressButtonA -= Flap;
+		PlayerInputController.PressButtonA -= Flap;
 	}
 
 	private void Flap()
 	{
-		if (GameManager.Instance.currentGameState == GameState.Play)
+		if (GameManager.Instance.CurrentGameState == GameState.Play)
 		{
 			playerRb.velocity = Vector2.zero;
 			playerRb.AddForce(Vector2.up * upForce);
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
 	private void OnCollisionEnter2D()
 	{
-		if (GameManager.Instance.currentGameState == GameManager.GameState.Play)
+		if (GameManager.Instance.CurrentGameState == GameManager.GameState.Play)
 		{
 			AudioManager.Instance.PlaySFX("Gameover");
 			GameManager.Instance.GameOver();

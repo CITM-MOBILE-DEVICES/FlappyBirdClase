@@ -4,11 +4,11 @@ public class InputManager
 {
 	public void SubscribeInputs(Action togglePausePlay)
 	{
-		PlayerInputController.pressButtonB += togglePausePlay;
+		PlayerInputController.PressButtonB += togglePausePlay;
 	}
 
 	public void UnsubscribeInputs(Action togglePausePlay)
 	{
-		PlayerInputController.pressButtonB -= togglePausePlay;
+		PlayerInputController.PressButtonB -= togglePausePlay;
 	}
 }

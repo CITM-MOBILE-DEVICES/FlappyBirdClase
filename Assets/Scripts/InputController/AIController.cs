@@ -5,8 +5,6 @@ using Random = UnityEngine.Random;
 
 public class AIController
 {
-	private float nextFlapTime;
-
 	public enum PlayerZone
 	{
 		Top,
@@ -16,18 +14,19 @@ public class AIController
 
 	public PlayerZone playerZone;
 
-	Tuple<float, float>[] pairIntervalFlap = new Tuple<float, float>[]
+	private Tuple<float, float>[] pairIntervalFlap = new Tuple<float, float>[]
 	{
 		new Tuple<float, float>(0.95f, 1.4f),
 		new Tuple<float, float>(0.65f, 0.9f),
 		new Tuple<float, float>(0.3f, 0.7f)
 	};
 
-	float TopZone = 2;
-	float BottomZone = -0.5f;
+	private float nextFlapTime;
+	private float topZone = 2;
+	private float bottomZone = -0.5f;
 
 	private bool init = false;
-	PlayerController playerController;
+	private PlayerController playerController;
 
 	public AIController(PlayerController playerController)
 	{
@@ -49,23 +48,6 @@ public class AIController
 		}
 	}
 
-	public float NextFlapTime()
-	{
-		if (playerController.transform.position.y > TopZone)
-		{
-			playerZone = PlayerZone.Top;
-		}
-		else if (playerController.transform.position.y < BottomZone)
-		{
-			playerZone = PlayerZone.Bottom;
-		}
-		else
-		{
-			playerZone = PlayerZone.Center;
-		}
-		return Time.time + Random.Range(pairIntervalFlap[(int)playerZone].Item1, pairIntervalFlap[(int)playerZone].Item2);
-	}
-
 	public bool ShouldPressButtonB()
 	{
 		if (init == false)
@@ -74,5 +56,22 @@ public class AIController
 			return true;
 		}
 		return false;
+	}
+
+	private float NextFlapTime()
+	{
+		if (playerController.transform.position.y > topZone)
+		{
+			playerZone = PlayerZone.Top;
+		}
+		else if (playerController.transform.position.y < bottomZone)
+		{
+			playerZone = PlayerZone.Bottom;
+		}
+		else
+		{
+			playerZone = PlayerZone.Center;
+		}
+		return Time.time + Random.Range(pairIntervalFlap[(int)playerZone].Item1, pairIntervalFlap[(int)playerZone].Item2);
 	}
 }

@@ -1,15 +1,15 @@
 using System;
 using UnityEngine;
 
-[System.Serializable]
-public class Sound
-{
-	public string name;
-	public AudioClip clip;
-}
-
 public class AudioManager : MonoBehaviour
 {
+	[System.Serializable]
+	public class Sound
+	{
+		public string name;
+		public AudioClip clip;
+	}
+
 	private static AudioManager instance;
 	public static AudioManager Instance { get { return instance; } }
 
