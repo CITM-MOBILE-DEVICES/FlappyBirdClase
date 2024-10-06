@@ -6,11 +6,7 @@ public class GameFacade
 	private ScoreManager scoreManager;
 	private InputManager inputManager;
 
-	public event Action<GameManager.GameState> OnChangeState
-	{
-		add { gameStateManager.OnChangeState += value; }
-		remove { gameStateManager.OnChangeState -= value; }
-	}
+	public GameStateManager StateManager => gameStateManager;
 
 
 	public GameFacade(PlayerInputController playerInputController)

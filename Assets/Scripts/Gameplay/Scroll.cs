@@ -9,12 +9,12 @@ public class Scroll : MonoBehaviour
 	{
 		rigidBody = GetComponent<Rigidbody2D>();
 		SetScroll(GameManager.Instance.CurrentGameState);
-		GameManager.Instance.OnChangeState += SetScroll;
+		GameManager.Instance.StateManager.OnChangeState += SetScroll;
 	}
 
 	private void OnDestroy()
 	{
-		GameManager.Instance.OnChangeState -= SetScroll;
+		GameManager.Instance.StateManager.OnChangeState -= SetScroll;
 	}
 
 	private void SetScroll(GameState gameState)

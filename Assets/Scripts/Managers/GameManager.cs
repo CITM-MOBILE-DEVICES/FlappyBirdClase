@@ -33,11 +33,7 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	public event Action<GameState> OnChangeState
-	{
-		add { gameFacade.OnChangeState += value; }
-		remove { gameFacade.OnChangeState -= value; }
-	}
+	public GameStateManager StateManager => gameFacade.StateManager;
 
 	private void Start()
 	{
