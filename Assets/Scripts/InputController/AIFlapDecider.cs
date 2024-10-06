@@ -2,8 +2,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-
-public class AIController
+public class AIFlapDecider
 {
 	private enum PlayerZone
 	{
@@ -24,16 +23,15 @@ public class AIController
 	private readonly float bottomZone = -0.5f;
 
 	private float nextFlapTime;
-	private bool init = false;
 
-	public AIController(PlayerController playerController)
+	public AIFlapDecider(PlayerController playerController)
 	{
 		this.playerController = playerController;
 		nextFlapTime = NextFlapTime();
 
 	}
 
-	public bool ShouldPressButtonA()
+	public bool ShouldFlap()
 	{
 		if (Time.time >= nextFlapTime)
 		{
@@ -44,16 +42,6 @@ public class AIController
 		{
 			return false;
 		}
-	}
-
-	public bool ShouldPressButtonB()
-	{
-		if (init == false)
-		{
-			init = !init;
-			return true;
-		}
-		return false;
 	}
 
 	private float NextFlapTime()
@@ -72,7 +60,7 @@ public class AIController
 		{
 			playerZone = PlayerZone.Center;
 		}
-		
+
 		var pairIntervalFlapElement = pairIntervalFlap[(int)playerZone];
 
 		return Time.time + Random.Range(pairIntervalFlapElement.Item1, pairIntervalFlapElement.Item2);

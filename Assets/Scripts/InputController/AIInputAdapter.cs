@@ -1,19 +1,25 @@
 public class AIInputAdapter : IInputAdapter
 {
-	private readonly AIController aiController;
+	private readonly AIFlapDecider aiFlapDecider;
+	private bool init = false;
 
 	public AIInputAdapter(PlayerController playerController)
 	{
-		aiController = new AIController(playerController);
+		aiFlapDecider = new AIFlapDecider(playerController);
 	}
 
 	public bool IsPressingButtonA()
 	{
-		return aiController.ShouldPressButtonA();
+		return aiFlapDecider.ShouldFlap();
 	}
 
 	public bool IsPressingButtonB()
 	{
-		return aiController.ShouldPressButtonB();
+		if (init == false)
+		{
+			init = !init;
+			return true;
+		}
+		return false;
 	}
 }

@@ -10,7 +10,6 @@ public class PlayerInputController : MonoBehaviour
 		Keyboard,
 		Mouse,
 		AI
-		//Online
 	}
 
 	[SerializeField] private InputType inputType;
@@ -33,7 +32,7 @@ public class PlayerInputController : MonoBehaviour
 		}
 	}
 
-	void Update()
+	private void Update()
 	{
 		if (inputAdapter.IsPressingButtonA())
 		{
