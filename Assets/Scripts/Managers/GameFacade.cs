@@ -5,6 +5,7 @@ public class GameFacade
 	private GameStateManager gameStateManager;
 	private ScoreManager scoreManager;
 	private InputManager inputManager;
+	private PlayerInputController playerInputController;
 
 	public event Action<GameManager.GameState> OnChangeState
 	{
@@ -13,11 +14,11 @@ public class GameFacade
 	}
 
 
-	public GameFacade()
+	public GameFacade(PlayerInputController playerInputController)
 	{
 		gameStateManager = new GameStateManager();
 		scoreManager = new ScoreManager();
-		inputManager = new InputManager();
+		inputManager = new InputManager(playerInputController);
 	}
 
 	public void InitializeGame(Action togglePausePlay)

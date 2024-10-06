@@ -3,6 +3,7 @@ using static GameManager;
 
 public class PlayerController : MonoBehaviour
 {
+	[SerializeField] private PlayerInputController playerInputController;
 	[SerializeField] private float upForce = 225f;
 	private Rigidbody2D playerRb;
 
@@ -13,12 +14,12 @@ public class PlayerController : MonoBehaviour
 
 	private void Start()
 	{
-		PlayerInputController.PressButtonA += Flap;
+		playerInputController.PressButtonA += Flap;
 	}
 
 	private void OnDestroy()
 	{
-		PlayerInputController.PressButtonA -= Flap;
+		playerInputController.PressButtonA -= Flap;
 	}
 
 	private void Flap()

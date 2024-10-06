@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+	[SerializeField] private PlayerInputController playerInputController;
+
 	public static GameManager Instance { get { return instance; } }
 	private static GameManager instance;
 
@@ -23,7 +25,7 @@ public class GameManager : MonoBehaviour
 		if (instance == null)
 		{
 			instance = this;
-			gameFacade = new GameFacade();
+			gameFacade = new GameFacade(playerInputController);
 		}
 		else
 		{

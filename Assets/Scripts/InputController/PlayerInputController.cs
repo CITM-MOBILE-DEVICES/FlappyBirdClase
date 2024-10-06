@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PlayerInputController : MonoBehaviour
 {
-	public static event Action PressButtonA;
-	public static event Action PressButtonB;
+	public event Action PressButtonA;
+	public event Action PressButtonB;
 	public enum InputType
 	{
 		Keyboard,
