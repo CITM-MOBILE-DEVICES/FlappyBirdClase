@@ -322,6 +322,51 @@ Transform:
   - {fileID: 1373579808}
   m_Father: {fileID: 2056087668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &287841599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 287841600}
+  - component: {fileID: 287841601}
+  m_Layer: 0
+  m_Name: GameFacade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &287841600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287841599}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1835177154}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &287841601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287841599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0a2385704b4444da31f4a51eba473c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInputController: {fileID: 969045371}
 --- !u!1 &347322038
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99784b8b7013bf14297399a385e6ebc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameFacade: {fileID: 0}
   speed: 2.5
 --- !u!114 &347322042
 MonoBehaviour:
@@ -651,6 +697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99784b8b7013bf14297399a385e6ebc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameFacade: {fileID: 0}
   speed: 2.5
 --- !u!61 &497560889
 BoxCollider2D:
@@ -927,6 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99784b8b7013bf14297399a385e6ebc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameFacade: {fileID: 0}
   speed: 2.5
 --- !u!212 &664456619
 SpriteRenderer:
@@ -1067,6 +1115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99784b8b7013bf14297399a385e6ebc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameFacade: {fileID: 0}
   speed: 2.5
 --- !u!61 &883299000
 BoxCollider2D:
@@ -1355,6 +1404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99784b8b7013bf14297399a385e6ebc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameFacade: {fileID: 0}
   speed: 2.5
 --- !u!61 &1039975061
 BoxCollider2D:
@@ -1555,7 +1605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aeb94c793f85664ab5f25088647edb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInputController: {fileID: 969045371}
+  gameFacade: {fileID: 287841601}
 --- !u!1 &1373579807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1615,6 +1665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99784b8b7013bf14297399a385e6ebc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameFacade: {fileID: 0}
   speed: 2.5
 --- !u!212 &1373579812
 SpriteRenderer:
@@ -1937,6 +1988,7 @@ Transform:
   - {fileID: 2034400685}
   - {fileID: 969045370}
   - {fileID: 993318582}
+  - {fileID: 287841600}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1857568289
@@ -1998,6 +2050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99784b8b7013bf14297399a385e6ebc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameFacade: {fileID: 0}
   speed: 2.5
 --- !u!212 &1857568294
 SpriteRenderer:
@@ -2333,6 +2386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99784b8b7013bf14297399a385e6ebc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameFacade: {fileID: 0}
   speed: 2.5
 --- !u!212 &1995480300
 SpriteRenderer:
@@ -2524,6 +2578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99784b8b7013bf14297399a385e6ebc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameFacade: {fileID: 0}
   speed: 2.5
 --- !u!61 &2046270137
 BoxCollider2D:
@@ -2866,6 +2921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99784b8b7013bf14297399a385e6ebc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameFacade: {fileID: 0}
   speed: 2.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

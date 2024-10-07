@@ -3,18 +3,23 @@ using static GameManager;
 
 public class Scroll : MonoBehaviour
 {
+	[SerializeField] private GameFacade gameFacade;
 	[SerializeField] private float speed = 2.5f;
 	private Rigidbody2D rigidBody;
+	private void Awake()
+	{
+		gameFacade = FindObjectOfType<GameFacade>();
+	}
 	private void Start()
 	{
 		rigidBody = GetComponent<Rigidbody2D>();
 		SetScroll(GameManager.Instance.CurrentGameState);
-		GameManager.Instance.StateManager.OnChangeState += SetScroll;
+		gameFacade.StateManager.OnChangeState += SetScroll;
 	}
 
 	private void OnDestroy()
 	{
-		GameManager.Instance.StateManager.OnChangeState -= SetScroll;
+		gameFacade.StateManager.OnChangeState -= SetScroll;
 	}
 
 	private void SetScroll(GameState gameState)

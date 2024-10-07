@@ -1,15 +1,17 @@
 using System;
+using UnityEngine;
 
-public class GameFacade
+public class GameFacade : MonoBehaviour
 {
 	private GameStateManager gameStateManager;
 	private ScoreManager scoreManager;
 	private InputManager inputManager;
 
+	[SerializeField] private PlayerInputController playerInputController;
+
 	public GameStateManager StateManager => gameStateManager;
 
-
-	public GameFacade(PlayerInputController playerInputController)
+	private void Start()
 	{
 		gameStateManager = new GameStateManager();
 		scoreManager = new ScoreManager();
